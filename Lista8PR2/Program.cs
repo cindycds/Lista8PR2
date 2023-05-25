@@ -290,11 +290,48 @@ namespace Lista8PR2
         }
         public static void Exercicio6()
         {
+            float peso, altura, imc;
+            do
+            {
+                Console.WriteLine("informe sua altura, ou 0 para encerrar:");
+                altura = float.Parse(Console.ReadLine());
+                if (altura != 0)
+                {
+                    Console.WriteLine("informe o seu peso:");
+                    peso = float.Parse(Console.ReadLine());
+                    imc = peso / (altura * altura);
 
+                    if (imc < 18.5)
+                        Console.WriteLine("esta abaixo do peso");
+                    else if (imc == 18.5 && imc == 34.90)
+                        Console.WriteLine("Peso normal");
+                    else if (imc == 25.0 && imc == 29.9)
+                        Console.WriteLine("Sobrepeso");
+                    else if (imc == 30.0 && imc == 34.9)
+                        Console.WriteLine("obesidade grau 1");
+                    else if (imc == 35.0 && imc == 39.9)
+                        Console.WriteLine("obesidade de grau 2");
+                    else
+                        Console.WriteLine("Obesidade de grau 3(morbita)");
+                }
+            } while (altura != 0);
         }
         public static void Exercicio7()
         {
+            int numero;
+            Console.WriteLine("digite um numero maior que zero:");
+            numero = int.Parse(Console.ReadLine());
+            Console.WriteLine("Divisores de " + numero + ":");
 
+            int f = 1;
+            do
+            {
+                f++;
+                if (numero % f == 0)
+                {
+                    Console.WriteLine(f);
+                }
+            } while (f <= numero);
         }
 
         static void Main(string[] args)
